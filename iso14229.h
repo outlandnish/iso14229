@@ -22,6 +22,7 @@ extern "C" {
 #define UDS_SYS_WINDOWS 2
 #define UDS_SYS_ARDUINO 3
 #define UDS_SYS_ESP32 4
+#define UDS_SYS_STM32 5
 
 #if !defined(UDS_SYS)
 
@@ -33,6 +34,8 @@ extern "C" {
 #define UDS_SYS UDS_SYS_ARDUINO
 #elif defined(ESP_PLATFORM)
 #define UDS_SYS UDS_SYS_ESP32
+#elif defined(STM32)
+#define UDS_SYS UDS_SYS_STM32
 #else
 #define UDS_SYS UDS_SYS_CUSTOM
 #endif
@@ -103,6 +106,20 @@ typedef SSIZE_T ssize_t;
 #include <string.h>
 #include <inttypes.h>
 #include <esp_timer.h>
+
+#define UDS_TP_ISOTP_C 1
+
+#endif
+
+#if UDS_SYS == UDS_SYS_STM32
+
+#include <assert.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include <stdio.h>
+#include <inttypes.h>
 
 #define UDS_TP_ISOTP_C 1
 

@@ -2544,6 +2544,8 @@ uint32_t UDSMillis(void) {
     return millis();
 #elif UDS_SYS == UDS_SYS_ESP32
     return esp_timer_get_time() / 1000;
+#elif UDS_SYS == UDS_SYS_STM32
+    return HAL_GetTick();
 #else
 #error "UDSMillis() undefined!"
 #endif
