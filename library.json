@@ -1,0 +1,17 @@
+{
+  "name": "iso14229",
+  "version": "1.0.0",
+  "description": "ISO 14229-1 UDS (Unified Diagnostic Services) implementation with ISO-TP transport",
+  "keywords": ["uds", "iso14229", "iso-tp", "automotive", "diagnostics"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/driftregion/iso14229"
+  },
+  "build": {
+    "flags": "-I .",
+    "srcDir": ".",
+    "srcFilter": [
+      "+<iso14229.c>"
+    ]
+  }
+}
